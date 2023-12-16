@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style.css" />
+    <script src="static/canvas.js" defer></script>
+    <title>MNIST Draw</title>
+  </head>
+
+  <body>
+    <h1>MNIST Draw!</h1>
+    <div id="container">
+      <div id="visual">
+        <canvas id="drawing-board" width="400" height="400"></canvas>
+        <div id="sidepanel">
+          <h2>Palpite</h2>
+          <div id="prediction"></div>
+          <p id="confidence"></p>
+        </div>
+      </div>
+      <div id="button-div">
+        <button id="clear-button">Limpar</button>
+        <button id="predict-button">Predição</button>
+      </div>
+    </div>
+  </body>
+</html>
