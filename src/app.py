@@ -1,7 +1,7 @@
-import gradio as gr
 from PIL.Image import Image, fromarray, Resampling
-from model import load_model
+import gradio as gr
 import numpy as np
+import keras
 
 
 def predict(image):
@@ -33,13 +33,13 @@ def update(canvas):
     return scaled_down.resize(image.size), np.argmax(confidence).item()
 
 
-model = load_model("data/model-weights.h5")
+model = keras.models.load_model("model/mnist_cnn.keras")
 
 with gr.Blocks() as demo:
     with gr.Row():
         # Default white brush
         brush = gr.Brush(default_size=20, colors=["white"], color_mode="fixed")
-        
+
         # Canvas dimensions
         canvas_size = 400
         container_size = int(canvas_size + (0.2 * canvas_size))
