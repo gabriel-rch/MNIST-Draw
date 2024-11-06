@@ -1,6 +1,5 @@
 from keras.datasets import mnist  # type: ignore
 import keras
-import time
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
