@@ -1,0 +1,17 @@
+name: Sync Hugging Face Space
+on:
+  push:
+    branches: [master]
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Sync Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          pip install -U "huggingface_hub[cli]"
+          huggingface-cli login --token $HF_TOKEN --add-to-git-credential
+          huggingface-cli upload gabriel-rocha/MNIST-Draw ./app --repo-type=space --commit-message="Sync App files"
+          huggingface-cli upload gabriel-rocha/MNIST-Draw ./model /model --repo-type=space --commit-message="Sync Model"
