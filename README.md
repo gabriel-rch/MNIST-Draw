@@ -9,7 +9,7 @@
 ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 
-This web-based application allows users to interactively draw digits and instantly classify them using a pre-trained model based on the MNIST dataset. 
+This Gradio demo allows users to interactively draw digits and instantly classify them using a pre-trained model based on the MNIST dataset. 
 
 MNIST, a widely used dataset in the field of machine learning, consists of handwritten digits ranging from 0 to 9. A Deep Neural Network (DNN) was trained on those images with the task of classifying and recognizing previously unseen handwritings of digits.
 
@@ -30,20 +30,20 @@ To run the project locally, follow these steps:
    ```sh
    pip install -r requirements.txt
    ```
-3. Navigate to the `src` folder
+3. Navigate to the `app` folder
    ```sh
-   cd src
+   cd app
    ```
-4. Run the Flask app
+4. Run the Gradio demo
    ```sh
-   flask run
+   gradio app.py
    ```
+
+This demo is also available on Hugging Face Spaces. You can access it [here](https://huggingface.co/spaces/gabriel-rocha/MNIST-Draw).
 
 ## Usage
 
-Quite simply, just start drawing and see the predictions! 
-
-If you wish to train your own MNIST model and use it on this demo, you can change the code on the `load_model` function to create a model with your architecture and load your weights into it! 
+Quite simply, just start drawing and see the predictions! The model will classify the digit you drew and display the result on the screen.
 
 
 ## Contributing
